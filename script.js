@@ -1,22 +1,5 @@
-// navigation menu functionality
-const menuBtn = document.querySelector('.menu-btn');
-const menuItems = document.querySelector('.nav-items');
-let menuOpen = false;
-
-menuBtn.addEventListener('click', () => {
-  if (!menuOpen) {
-    menuBtn.classList.add('open');
-    menuItems.classList.add('open');
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove('open');
-    menuItems.classList.remove('open');
-    menuOpen = false;
-  }
-});
-
-// smooth scroll
-const links = document.querySelectorAll('a');
+// Smooth scrolling on anchor links
+const links = document.querySelectorAll('a[href^="#"]');
 
 for (const link of links) {
   link.addEventListener('click', clickHandler);
@@ -32,3 +15,19 @@ function clickHandler(e) {
     behavior: "smooth"
   });
 }
+
+// Sticky navigation
+const nav = document.querySelector('nav');
+const topOfNav = nav.offsetTop;
+
+function fixNav() {
+  if (window.scrollY >= topOfNav) {
+    document.body.style.paddingTop = nav.offsetHeight + 'px';
+    document.body.classList.add('fixed-nav');
+  } else {
+    document.body.style.paddingTop = 0;
+    document.body.classList.remove('fixed-nav');
+  }
+}
+
+window.addEventListener('scroll', fixNav);
