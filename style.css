@@ -85,3 +85,36 @@ ul li {
   margin: 0 auto;
   border: 2px solid black;
 }
+#social {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#social h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#social ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#social li {
+  margin: 0 10px;
+}
+
+#social a {
+  color: #000;
+  font-size: 32px;
+  text-decoration: none;
+}
+
+#social a:hover {
+  color: #0077B5;
+}
+
